@@ -1,0 +1,84 @@
+{
+  "catalog_coverage": {
+    "category_groups_discovered": 0,
+    "discovery_limited": false,
+    "listing_pages_attempted": 0,
+    "listing_pages_discovered": 1,
+    "products_checked_this_cycle": 0,
+    "products_discovered": 0,
+    "products_loaded_this_cycle": 0,
+    "products_not_yet_checked": 0,
+    "unique_products_attempted": 0,
+    "unique_products_successfully_loaded": 0
+  },
+  "diagnostic_policy": "First 5 network/resource/JS diagnostics per page; at most one screenshot <=64KiB; no full HTML",
+  "duration_seconds": 22.327,
+  "evidence": [
+    {
+      "path": "evidence/40569455943-1.jpg",
+      "sha256": "e94703fc37187ee98310cc14f4e0b9d7d2f622e2681011682629246b51940036"
+    }
+  ],
+  "exact_schedule_guaranteed": false,
+  "id": "40569455943-1",
+  "observations": [
+    {
+      "at": "2026-10-27T19:30:05.953092+00:00",
+      "cf_ray": "a5141d034dbbf7bb-LAX",
+      "dom_ms": 52,
+      "final_url": "https://soluparts.cl/",
+      "first_attempt": {
+        "at": "2026-10-27T19:29:45.562544+00:00",
+        "cf_ray": "a5141c84cc7be1ee-LAX",
+        "dom_ms": 249,
+        "final_url": "https://soluparts.cl/",
+        "html_retained": false,
+        "html_sha256": "c9c21a7d78dbe6466c30583130337bdae1485380ac7911cdd24d08514a5130d4",
+        "http_resource_errors": [
+          {
+            "status": 403,
+            "type": "document",
+            "url": "https://soluparts.cl/"
+          }
+        ],
+        "http_resource_errors_count": 1,
+        "http_status": 403,
+        "kind": "home",
+        "network_failures": [],
+        "network_failures_count": 0,
+        "screenshot_sha256": "e94703fc37187ee98310cc14f4e0b9d7d2f622e2681011682629246b51940036",
+        "script_errors": [],
+        "script_errors_count": 0,
+        "status": "blocked",
+        "title": "Attention Required! | Cloudflare",
+        "url": "https://soluparts.cl/"
+      },
+      "html_retained": false,
+      "html_sha256": "dc0fca6e42fd48a838c17159854c673cfcf3af9e22d5f3cc1cf0dd57bba2c644",
+      "http_resource_errors": [
+        {
+          "status": 403,
+          "type": "document",
+          "url": "https://soluparts.cl/"
+        }
+      ],
+      "http_resource_errors_count": 1,
+      "http_status": 403,
+      "kind": "home",
+      "network_failures": [],
+      "network_failures_count": 0,
+      "screenshot_sha256": "e94703fc37187ee98310cc14f4e0b9d7d2f622e2681011682629246b51940036",
+      "script_errors": [],
+      "script_errors_count": 0,
+      "status": "blocked",
+      "title": "Attention Required! | Cloudflare",
+      "url": "https://soluparts.cl/"
+    }
+  ],
+  "observed_at_chile": "2026-10-27T16:29:43.811550-03:00",
+  "observed_at_utc": "2026-10-27T19:29:43.811550+00:00",
+  "operational_observation": false,
+  "schedule_target_minutes": 20,
+  "schema": 1,
+  "status": "blocked"
+}

@@ -1,0 +1,22 @@
+{
+  "last_observation": {
+    "id": "40569455943-1",
+    "at": "2026-10-27T19:29:43.811550+00:00",
+    "status": "blocked",
+    "operational_observation": false,
+    "record": "records/2026-10-27/40569455943-1.json",
+    "sha256": "eb9e1eb57007c3027134e617f0a11896d1674a312014848f9b1e703995a683b9"
+  },
+  "catalog_coverage": {
+    "products_discovered": 0,
+    "unique_products_attempted": 0,
+    "unique_products_successfully_loaded": 0,
+    "products_not_yet_checked": 0,
+    "category_groups_discovered": 0,
+    "listing_pages_discovered": 1,
+    "listing_pages_attempted": 0,
+    "discovery_limited": false
+  },
+  "calibrated": {},
+  "stop_at": "2026-11-24T22:00:00-03:00"
+}

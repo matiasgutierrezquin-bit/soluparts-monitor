@@ -3,7 +3,17 @@
   "public_repository_authorized": true,
   "repository": "matiasgutierrezquin-bit/soluparts-monitor",
   "unit_tests_passed": 14,
-  "real_browser_validation": "pending_first_cloud_run",
+  "real_browser_validation": "blocked_by_cloudflare",
   "periodic_monitoring_enabled": false,
-  "email_reports_enabled": false
+  "email_reports_enabled": false,
+  "last_real_check": "2026-10-27T16:29:43.811550-03:00",
+  "workflow_run_id": 40569455943,
+  "operational_observation": false,
+  "http_status": 403,
+  "product_pages_checked": 0,
+  "cloudflare_ray_ids": [
+    "a5141c84cc7be1ee-LAX",
+    "a5141d034dbbf7bb-LAX"
+  ],
+  "next_requirement": "Site administrator must authorize this monitor before another access test"
 }

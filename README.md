@@ -1,6 +1,16 @@
 # Soluparts: monitoreo público con navegador
 
-Monitor gratuito de acceso y carga de productos con GitHub Actions y Playwright/Chromium. Publicación autorizada el 27/10/2026. Primera prueba real pendiente; correos pausados hasta verificar el funcionamiento.
+Monitor gratuito de acceso y carga de productos con GitHub Actions y Playwright/Chromium. Publicación autorizada el 27/10/2026. Prueba real ejecutada el 27/10/2026 a las 16:29 de Chile: Cloudflare bloqueó la portada con HTTP 403 en ambos intentos. El programa y la persistencia funcionaron; se revisaron cero productos. El escaneo de productos todavía no está operativo. La programación de consultas y los correos permanecen pausados.
+
+## Evidencia de la primera prueba
+
+- Ejecución: https://github.com/matiasgutierrezquin-bit/soluparts-monitor/actions/runs/40569455943
+- Registro: https://github.com/matiasgutierrezquin-bit/soluparts-monitor/blob/monitor-data/records/2026-10-27/40569455943-1.json
+- Título devuelto: `Attention Required! | Cloudflare`.
+- HTTP: `403`; resultado: `blocked`; `operational_observation=false`.
+- Cloudflare Ray IDs: `a5141c84cc7be1ee-LAX` y `a5141d034dbbf7bb-LAX`.
+
+Esto acredita un bloqueo al monitor, no una caída del sitio ni una falla atribuible a su proveedor. Antes de repetir la prueba, quien administra Cloudflare de Soluparts debe autorizar el acceso de este monitor a la portada, búsquedas, categorías y fichas. No se debe desactivar globalmente la seguridad del sitio. Una ejecución de GitHub marcada como exitosa indica que el programa terminó y guardó el resultado; no significa que el sitio haya aprobado la validación.
 
 ## Alcance
 

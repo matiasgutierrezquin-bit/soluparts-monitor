@@ -1,0 +1,58 @@
+name: Soluparts public browser checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['app/**', 'scripts/**', 'config.json', 'requirements.txt', '.github/workflows/monitor.yml']
+  schedule:
+    - cron: '7,27,47 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: soluparts-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    # No hosted jobs on private repositories. The schedule starts disabled.
+    if: github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - name: Check observation deadline
+        id: window
+        run: |
+          python3 - <<'PY'
+          import datetime as dt, json, os
+          config = json.load(open('config.json'))
+          stop = dt.datetime.fromisoformat(config['stop_at'])
+          event=os.environ.get('GITHUB_EVENT_NAME','')
+          enabled=config.get('monitor_enabled',False)
+          active = dt.datetime.now(dt.timezone.utc) < stop and (event != 'schedule' or enabled)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('active=' + str(active).lower() + '\n')
+          PY
+      - uses: actions/setup-python@v6
+        if: steps.window.outputs.active == 'true'
+        with:
+          python-version: '3.12'
+      - name: Prepare durable data branch
+        if: steps.window.outputs.active == 'true'
+        run: bash scripts/prepare_store.sh
+      - name: Install browser test dependencies
+        if: steps.window.outputs.active == 'true'
+        run: |
+          python -m pip install --disable-pip-version-check -r requirements.txt
+          python -m playwright install --with-deps chromium --only-shell
+      - name: Run an actual browser check
+        if: steps.window.outputs.active == 'true'
+        run: python -m app.one_check --data-dir "$RUNNER_TEMP/soluparts-data"
+      - name: Commit measured evidence
+        if: steps.window.outputs.active == 'true'
+        run: bash scripts/publish_store.sh

@@ -1,0 +1,9 @@
+{
+  "implementation": "GitHub Actions + Playwright, standard public Linux runners",
+  "public_repository_authorized": true,
+  "repository": "matiasgutierrezquin-bit/soluparts-monitor",
+  "unit_tests_passed": 14,
+  "real_browser_validation": "pending_first_cloud_run",
+  "periodic_monitoring_enabled": false,
+  "email_reports_enabled": false
+}
